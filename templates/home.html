@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Loan Approval Prediction</title>
+</head>
+
+
+
+<body>
+
+ <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Adult Census Income</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('Home') }}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for('about') }}">About </a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+<h2 style="   text-align: center;
+    padding-top: 87px;
+    color: dodgerblue;">Adult Census Income Prediction project</h2>
+<p style="text-align: center; padding-top: 20px;">Machine learning Web App. <span style="color: red; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Built with flask</span></p>
+  <div class="d-flex justify-content-center align-items-center container pt-5">
+
+    <div class="row ">
+
+
+      <form action="{{ url_for('predict')}}" method="post">
+
+        <div class="form-group ">
+          <label for="exampleInputEmail1">Age</label>
+          <input style="width: 50rem;" name="Age" type="number" class="form-control" id="first" aria-describedby="emailHelp"
+          placeholder="Enter your Age ( Ex. 23,25,33 ) ">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">Final Weight</label>
+          <input required="required" name="Final_Weight" type="number" class="form-control" id="second"
+            aria-describedby="emailHelp" placeholder="final weight. In other words, this is the number of people the census believes the entry represents">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">education-num</label>
+          <input  required="required" name="education_num" type="number" class="form-control" id="third"
+            aria-describedby="emailHelp" placeholder="Enter education-num">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">marital-status</label>
+          <select required="required" name="marital-status" class="form-control"  class="custom-select">
+            <option selected>Choose...</option>
+            <option value="Couple">Couple</option>
+            <option value="Single">Single</option>
+          </select>
+        </div>
+
+        
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">relationship</label>
+            <select required="required" name="relationship" class="form-control"  class="custom-select">
+              <option selected>Choose...</option>
+              <option value="Unmarried">Unmarried</option>
+              <option value="Wife">Wife</option>
+              <option value="Husband">Husband</option>
+              <option value="Not-in-family">Not-in-family</option>
+              <option value="Own-child">Own-child</option>
+              <option value="Other-relative">Other-relative</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Race</label>
+            <select required="required" name="Race" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="White">White</option>
+              <option value="Amer-Indian-Eskimo">Amer-Indian-Eskimo</option>
+              <option value="Asian-Pac-Islander">Asian-Pac-Islander</option>
+              <option value="Black">Black</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Gender</label>
+            <select required="required" name="Gender" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">capital-gain</label>
+            <select required="required" name="capital_gain" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="Zero">Zero ( 0 )</option>
+              <option value="Greate_than_0">Greater than zero ( 0> )</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">capital-loss</label>
+            <select required="required" name="capital_loss" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="Zero">Zero ( 0 )</option>
+              <option value="Greate_than_0">Greater than zero ( 0> )</option>
+            </select>
+          </div>
+
+          <div class="form-group ">
+            <label for="exampleInputEmail1">Work Time ( hours-per-week )</label>
+            <input style="width: 50rem;" name="hours_per_week" type="number" class="form-control" id="first" aria-describedby="emailHelp"
+            placeholder="Work Time ( hours-per-week )">
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">country</label>
+            <select required="required" name="country" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="US">US</option>
+              <option value="Non-US">Non- US</option>
+            </select>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Employeement Type</label>
+            <select required="required" name="Emplyee_Type" class="form-control" id="fuel" class="custom-select"
+              id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="govt">Government worker</option>
+              <option value="Private">Private</option>
+              <option value="Self-Employed">Self-Employed</option>
+              <option value="Without-pay">Without-pay</option>
+            </select>
+          </div>
+
+
+        <div class="form-group text-center">
+          <button id="sub" class="btn btn-primary" type="submit ">Predict</button>
+
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+<footer style="text-align: center">
+
+  <p >Made by Dev 💝</p>
+</footer>
+
+</html>

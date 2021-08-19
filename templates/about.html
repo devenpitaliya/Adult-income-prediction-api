@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loan Approval Prediction - About</title>
+</head>
+<body>
+
+
+<header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Adult Census Income</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for('Home') }}">Home </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ url_for('about') }}">About <span class="sr-only">(current)</span></a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+
+    <h2 style="    text-align: center;
+    padding-top: 87px;
+    color: dodgerblue;">Adult Census Income Prediction project</h2>
+<p style="text-align: center; padding-top: 20px;">Machine learning Web App. <span style="color: red; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Built with flask</span></p>
+  <div class="d-flex justify-content-center align-items-center container pt-5">
+
+    <main role="main" class="container" style="padding: 54px 15px 0;">
+      <p>● <strong><u>age</u></strong>: the age of an individual ○ Integer greater than 0</p>
+<p>&nbsp;● <strong><u>Workclass</u></strong>: a general term to represent the employment status of an individual&nbsp;</p>
+<ol>
+    <li>govt,</li>
+    <li>Private,</li>
+    <li>Self-Employed,</li>
+    <li>Without-pay</li>
+</ol>
+<p>● <strong><u>fnlwgt</u></strong>: final weight. In other words, this is the number of people the census believes the entry represents.. ○ Integer greater than 0&nbsp;</p>
+<p>● <strong>education</strong><strong>-&shy;num:</strong> the highest level of education achieved in numerical form.&nbsp;</p>
+<p>- Integer greater than 0&nbsp;</p>
+<p>● <strong><u>marital-&shy;status:</u></strong> marital status of an individual.&nbsp;</p>
+<ol>
+    <li>couple,</li>
+    <li>single</li>
+</ol>
+<p>● <strong><u>relationship:</u></strong> represents what this individual is relative to others. For example an individual could be a Husband. Each entry only has one relationship attribute and is somewhat redundant with marital status. We might not make use of this attribute at all&nbsp;</p>
+<ol>
+    <li>&nbsp;Wife,</li>
+    <li>&nbsp;Own&shy;-child,</li>
+    <li>&nbsp;Husband,&nbsp;</li>
+    <li>Not-&shy;in-&shy;family,</li>
+    <li>&nbsp;Other-&shy;relative,</li>
+    <li>&nbsp;Unmarried.&nbsp;</li>
+</ol>
+<p>● <strong><u>Race</u></strong>: Descriptions of an individual&rsquo;s race&nbsp;</p>
+<ol>
+    <li>&nbsp;White,</li>
+    <li>&nbsp;Asian-&shy;Pac-&shy;Islander,</li>
+    <li>&nbsp;Amar-Indian&shy;-Eskimo,&nbsp;</li>
+    <li>Other, Black.&nbsp;</li>
+</ol>
+<p>●<strong><u>&nbsp;Sex:&nbsp;</u></strong>the biological sex of the individual ○ Male, Female&nbsp;</p>
+<p>● <strong><u>Capital-&shy;gain:</u></strong> capital gains for an individual &nbsp;</p>
+<p>● <strong><u>Capital&shy;-loss:</u></strong> capital loss for an individual &nbsp;</p>
+<p>● <strong><u>Work&nbsp;</u></strong><strong><u>hours&shy;-per-&shy;week:</u></strong> the hours an individual has reported to work per week - continuous value.&nbsp;</p>
+<p>● &shy;<u><strong>Country:</strong></u> country of origin for an individual</p>
+<ol>
+    <li>&nbsp;<strong><u>United&shy;-States(US)&nbsp;</u></strong></li>
+    <li><strong><u>Other country includes -</u></strong> Cambodia, England, Puerto&shy;-Rico, Canada, Germany, Outlying&shy;-US(Guam-&shy;US-VI-&shy;etc), India, Japan, Greece, South, China, Cuba, Iran, Honduras, Philippines, Italy, Poland, Jamaica, Vietnam, Mexico, Portugal, Ireland, France, Dominican&shy;-Republic, Laos, Ecuador, Taiwan, Haiti, Columbia, Hungary, Guatemala, Nicaragua, Scotland, Thailand, Yugoslavia, El&shy;-Salvador, Trinidad &amp;Tobago, Peru, Hong,&nbsp;</li>
+    <li>Holland&shy;-Netherlands.&nbsp;</li>
+</ol>
+        <p>● <h3><strong><u><span style="color: rgb(184, 49, 47);">The label(Prediction):</span></u></strong></h3> whether or not an individual makes more than $50,000 annually. ○ &lt;=50k, &gt;50k</p>
+
+    </main>
+
+    <footer style="text-align: center">
+
+  <p >Made by Dev 💝</p>
+</footer>
+
+
+
+
+<!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+</html>
