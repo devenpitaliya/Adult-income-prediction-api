@@ -4,6 +4,8 @@ The Goal is to predict whether a person has an income of more than 50K a year or
 This is basically a binary classification problem where a person is classified into the >50K group or <=50K group.
 ## Project Difficulties 
 level Intermediate
+## heroku diployment link 
+https://ml-income-prediction-api.herokuapp.com/
 
 ## ⏳ Dataset
 - Download the dataset for custom training and testing and model building
